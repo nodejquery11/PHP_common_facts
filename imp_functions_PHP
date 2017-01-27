@@ -1,0 +1,90 @@
+#Important math functions in PHP 5
+https://hourofcode.accenture.com/index.aspx
+
+/*It is remove the negative sign and give you absolute value*/
+abs [Absolute value]
+Syntax: abs($number);
+Ex. echo abs(-4.2);
+
+/*conver a number  b/w arbitory bases like $formBase b/w 2 to 36*/
+Syntax: base_convert($number, $formbase, $tobase);
+Ex. 
+$number = ''a37334';
+echo base_convert($number, 16, 2);
+
+/*convert the binary number to decimal*/
+Syntax: bindec($binary_string);
+Ex. echo bindec('110011');
+
+/*Round off function*/
+[if the decimal number on or above of 1 then it will add `1` to the main number]
+Syntax: ceil($float_val);
+Ex. echo ceil(4.3); //5
+
+/*convert the decimal value into binary number*/
+Syntax: decbin($number);
+dechex($number); //converth dec to hexdeciaml number
+decoct($number); //convert dec to octal number
+
+/*Round off but it will make down of number*/
+Syntax: floor($float_number);
+Ex. echo floor(4.3); //output 4
+
+/*To return the floating reminder value*/
+Syntax: fmod(float $x, float$y);
+Ex. 
+$x = 5.7;
+$y = 1.3;
+$r = fmod($x, $y); //r = 0.5
+
+/*Generate the max rendom number*/
+Syntax: getrandmax() //no parametes in it.//length of number `2147483647`, I guess.
+Syntax: rand(int $min, int $max); //Generate the rendom integer 
+Syntax: round(float $value); //if your your deciaml value more then 0.5 then it will added 1 into the main value.
+
+/*Return the decimal value*/
+Syntax: hexdec($hex_value);
+Ex. var_dump(hexdec("that")); //return the int(10);
+
+/*Integer divition*/
+Syntax: int intdiv($divident, $divisor);
+Ex. var_dump(intdiv(3, 2)); //output int(1);
+
+/*Fine the highest value*/
+Syntax: max(array $value);
+Ex. echo max(array(2, 4, 5)); // 5
+
+/*Find the lowest value*/
+Syntax: min();
+Ex. echo min(array(2, 4, 5)); // 2
+
+/*Get value of pi*/
+Syntax: pi();
+Ex. echo pi(); // 3.1415926535898
+var_dump(pow(2, 8)); // int(256), it is like 2^8
+
+/*Get the square root*/
+Syntax: sqrt($arg);
+Ex. echo sqrt(9); // 3
+
+/*Seed the random number generator*/
+Syntax: srand([int $seed]);
+Ex. 
+function make_seed()
+{
+  list($usec, $sec) = explode(' ', microtime());
+  return $sec + $usec * 1000000;
+}
+srand(make_seed());
+$randval = rand();
+
+/*For Games, animation & drawing*/
+Syntax: acos($arg) [to calculate the angle of two vectors]
+Ex 
+Angle b/w two vactor = acos((v1X*v2X + v1Y*v2Y)/(|v1| * |V2|));
+* asin();
+* atan();
+
+/*PHP Math function related questions */
+----Remain
+
