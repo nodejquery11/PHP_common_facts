@@ -1,0 +1,70 @@
+# Imporatant Array functions in PHP
+.function name with description
+.syntax
+.example
+
+1. array_change_key_case [Return the key values in upper or lower case, in case `keys` are in `string` format]
+array_change_key_case[$array_val, CASE_LOWER(default)/ CASE_UPPER];
+Ex. $array = array('a'=>1, 'b'=>'2');
+$changeKeyCase = array_change_key_case($array, CASE_UPPER);
+output: array['A'=>1, 'B'=>2]
+
+2. array_chunk [split an array into small or check array]
+array_chunk($array_val, $size, $preserve_key); 
+[$size: it will represent the size of chunk array]
+[$preserve_key: is true then it will give you the continuous indexing, even in the check array. However it will default false, so it will always start chunk array indexing from `0`.]
+Ex. $input_array = array('a', 'b', 'c', 'd', 'e');
+print_r(array_chunk($input_array, 2, true));
+Array(
+    [0] => Array(
+            [0] => a
+            [1] => b
+        )
+    [1] => Array(
+            [2] => c
+            [3] => d
+        )
+    [2] => Array(
+            [4] => e
+        )
+)
+
+3. array_column [It will return the specific column values as per their key]
+array_column($array, $column_val, $index_key==NULL)
+Ex.$records = array( array( 'id' => 2135,'first_name' => 'John','last_name' => 'Doe'),
+    array('id' => 3245,'first_name' => 'Sally','last_name' => 'Smith' ),
+    array('id' => 5342,'first_name' => 'Jane','last_name' => 'Jones'),
+    array('id' => 5623,'first_name' => 'Peter','last_name' => 'Doe')
+); 
+$first_names = array_column($records, 'first_name');
+print_r($first_names);
+output: Array([0] => John, [1] => Sally, [2] => Jane, [3] => Peter)
+
+4. array_combine [to combine the two array and first array will be key and second array will be value]
+array_combine($array1, $array2); [$array1 => 'key' & $array2 => 'value']
+Ex. 
+$a = array('green', 'red', 'yellow');
+$b = array('avocado', 'apple', 'banana');
+$c = array_combine($a, $b);
+
+print_r($c);
+output:
+Array
+(
+    [green]  => avocado
+    [red]    => apple
+    [yellow] => banana
+)
+
+4. array_count_values [Return the itteration of specific value in an array]
+array_count_values($array);
+Ex.$array = array(1, "hello", 1, "world", "hello");
+print_r(array_count_values($array));
+Array(
+    [1] => 2
+    [hello] => 2
+    [world] => 1
+)
+
+5. 
+
