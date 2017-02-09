@@ -66,5 +66,20 @@ Array(
     [world] => 1
 )
 
-5. 
-
+5. array_combine [return to combine two array where first array will b key and second array values] 
+ $array1= array(1, 2, 3);
+ $array2= array(4, 5, 'a');
+ $combine = array_combine($array1, $array2);
+ Output: array(1=> 4, 2=> 5, 3=>'a');
+ 
+ 6. array_column_values [return the count value of common array value, where as array value become key and count become value]
+  $array = array(2,3,4,2,6,4,1);
+  $column_value = array_column_values($array);
+  Output: array(2=> 2, 3=> 1, 4=> 2, 6=> 1, 1=> 1);
+ 
+ 7. array_diff_assocc [ return difference array, where function matchs key as well as values and create an array]
+  $arr1= array(1,2,'a',4);
+  $arr2= array(3,2,5,4);
+  $array = array_diff_assocc($arr1, $arr2);
+  Output: array(1,'a',4);
+ 
