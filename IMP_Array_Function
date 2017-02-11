@@ -83,3 +83,36 @@ Array(
   $array = array_diff_assocc($arr1, $arr2);
   Output: array(1,'a',4);
  
+ 8. array_intersect($arr1, $arr2); [it will return the common value of both array and print value as per the first array indexs]
+ $arr1 = array(1, 3, 4, 6, 2, 8);
+ $arr2 = array(4, 9, 1, 2, 10);
+ $output = array_intersect($arr1, $arr2);
+ output: array(1, 4, 2);
+ 
+ 9. array_intersect_assoc($arr1, $arr2); [it will compare both key and values of an array and return the common values]
+ 
+ 10. array_unique(array) [it will return the unique value in array]
+ 
+ 11. unset(array[key]) [ it will delete the perticular (key) value from an array]
+  $arr1 = array(1, 3, 4, 6, 2, 8);
+  unset($arr1[3]);
+  output: array(1, 3, 4, 2, 8);
+  
+ 12. array_push($array, $insert_val); [it will return an array with added element, it will add the element at the last an array]
+ 
+ 13. array_pop($array, $pop_element); [It will delete an element at the end of an array]
+ 
+ 14. array_search($search_val, $dest_array, true/false); [it will search the `search_val` into `dest_array` and if the value will be exist then it will return the key of the value. Deafult the third argument set as `false`. If you set it `true` then it will compare the type of values.]
+ $arr1 = array(1, 3, 4, 6, 2, 8);
+ $reault = array_search(4, $arr1, false);
+ output: key=2
+ 
+ 15. array_diff($arr1, $arr2) [it will return the difference between two array and it takes the first array value as unique]
+ $arr1 = array(1, 3, 4, 6, 2, 8);
+ $arr2 = array(4, 9, 1, 2, 10);
+ $output = array_diff($arr1, $arr2);
+ output: array(3, 6, 8);
+ 
+ 16. array_fill($start_index, $num_of_index, $value) [It will push the same value from $start_index to $end_index]
+ $output = array_fill(5, 3, 'vikas');
+ output: array(5 => 'vikas', 6 => 'vikas', 7 => 'vikas');
