@@ -53,6 +53,21 @@ function cust_intersect_value($argone, $argtwo){
     return $output;
  }//End function
  
+ /*4. Check the values an array is Integer*/
+ 
+ function checkIntArray(array $arg){
+   $output = Array();
+     for($i= 0; $i< count($arg); $i++){
+        if(!is_int($arg[$i]){
+           array_push($output, $arg[$i]);
+        }
+     }
+     print_r($output);
+     if(!empty($output)){
+         return true;
+     }
+ }//End function
+ 
  
         
       
