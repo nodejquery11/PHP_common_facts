@@ -1,10 +1,9 @@
 # Custom functions related PHP
 
-/*1. Intersect the two string or array using this function.*/
-
+/*1. Intersect the two string or array using this function.
+*/
 function cust_intersect_value($argone, $argtwo){
-   /* 
-   * str_split(string): to split the string into array
+   /* str_split(string): to split the string into array
    * is_array(array): return true if the passing value or argument array
    * array_unique(array): remove the duplicate value in an array
    * array_push(array, value): to insert or add the value from end of array
@@ -23,8 +22,8 @@ function cust_intersect_value($argone, $argtwo){
    return array_unique($arrayfill);
  }// End function
  
- /*2. find unique value without using PHP array functions. */
- 
+ /*2. find unique value without using PHP array functions. 
+ */ 
  function uniqueValue($arg){
    $outputArray = Array();
    $argV = is_array($arg) ? $arg : str_split($arg);
@@ -40,8 +39,8 @@ function cust_intersect_value($argone, $argtwo){
    }//End fisrt for
  }//End function
  
- /*3. search the exact value from an array */
- 
+ /*3. search the exact value from an array 
+ */ 
  function exactSearch($searchValue, $array){
     $input = is_array($array) ? $array : str_split($array);
     $output = Array();
@@ -53,8 +52,8 @@ function cust_intersect_value($argone, $argtwo){
     return $output;
  }//End function
  
- /*4. Check the values an array is Integer*/
- 
+ /*4. Check the values an array is Integer
+ */ 
  function checkIntArray(array $arg){
    $output = Array();
      for($i= 0; $i< count($arg); $i++){
