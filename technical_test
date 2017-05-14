@@ -1,0 +1,110 @@
+Lucky Value
+
+You have a rectangular grid of size N×M
+containing N×M cells. Each cell is represented as Cell(X,Y) where 1≤X≤N and 1≤Y≤M. Every cell has a value which can be positive / negative or zero.
+You have to calculate the Lucky Value for this grid which is the maximum of sum of values of all cells present in a group.
+
+Rules of selecting cells in the group are given below:
+    Select cells one by one.
+    The selected Group should contain at least 1 cell.
+    Any cell in the grid can be selected as the starting cell.
+    If the last selected cell is (x1,y1) then you can jump only to any other cell (x2,y2) such that (x1−x2) > (y1−y2)
+
+Input:
+
+The first line of input contains an integer T, denoting the number of test cases.
+The first line of each test case contains 2 space-separated integers N and M denoting the grid size. Each of the following N lines contain M space-separated integers. (representing the cell values).
+
+Output:
+
+For each test-case, print the Lucky Value in a separate line.
+Constraints:
+1≤T≤5
+1≤M,N≤500
+−106≤Value≤106
+
+Sample Input
+
+2
+2 2
+1 2
+3 4
+1 3
+12 -35 21
+
+Sample Output
+
+9
+33
+
+Explanation
+For test-case #1:
+Select cells in this order (2, 1) -> (2, 2) -> (1, 2)
+Lucky Value = 3 + 4 + 2 = 9
+
+For test-case #2:
+Select cells in this order; (1, 1) -> (1, 3)
+Lucky Value = 12 + 21 = 33
+
+========================================================================================================================================
+
+Maximum Zig-Zag Subsequence
+Given an array of integers A, find the maximum zig-zag subsequence.
+A zig-zag subsequence is defined as a subsequence S={a[i1],a[i2],....,a[ik],a[j1],a[j2],...,a[jl]}
+where i1<i2<...<ik<j1<j2<...<jl and a[i1]<a[i2]<...<a[ik]>a[j1]>a[j2]>...>a[jl]. where k≥1 (one) and l≥0 (zero). Clearly, ik is the High-Point for subsequence S
+Sum of any zig-zag subsequence is the sum of all the elements present in that subsequence.
+You need to find MAX(S)
+
+which is the maximum of sum of values of all possible zig-zag subsequences. Also output the High-Point of that subsequence (If multiple possible answers exist, output the one with lower High-Point index value).
+
+Input:
+The first line of the input contains T, denoting the number of test cases.
+For each test case, there are two lines in the input.
+The first line contains a single positive integer N. The second line contains N space-separated integers A[i]
+
+Output:
+
+For each test-case, print two space-separated integers denoting the maximum value and the High-Point in a separate line.
+Constraints:
+1≤T≤5
+1≤N≤105
+−109≤A[i]≤109
+
+Sample Input
+2
+3
+1 2 1
+5
+3 2 3 2 1
+
+Sample Output
+4 2
+8 3
+
+Explanation
+In the first test case, the maximum sum will be 4 as the whole array can be treated as a zig-zag subsequence. Here, 2 is the High-Point as a[1]<a[2]>a[3]
+
+function ZigZagSubsequenceMax(array $input){
+  $testCase = $input[0];
+  $j = 1;
+  $k = 2;
+  for($i=0; $i<$testCase; $i++){
+    $numOfElement = $input[$i+$j];
+    $subArr = $input[$i+$k];
+    $explode = explode(' ', $subArr);
+    $maxValue = max($explode);
+    $counter = 0;
+     for ($v=0; $v<$numOfElement; $v++){
+      $counter = $counter + $explode[$v];
+     }
+    echo $counter." ".$maxValue ."\n";
+    $j = $j +1;
+    $k = $k +1;
+  }
+}
+
+$input_Arr = array();
+while(false !== ($input = fgets(STDIN))){
+	array_push($input_Arr, $input);
+}
+ZigZagSubsequenceMax($input_Arr);
