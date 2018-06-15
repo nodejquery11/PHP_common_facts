@@ -1,0 +1,19 @@
+# Drupal [https://www.drupal.org/documentation]
+> Drupal core 
+  ? how to create the custom node
+  ? How to create the custom hooks
+  ? custom theme
+  ? custom module
+  ? custom layout
+  ? what is Berksfile in Drupal
+  ? create a custom form and block
+
+Q. To where would u navigate in order to install Druapl once the Vagrant local development env is installed 
+A. http://192.168.44.44
+
+Q. which file would u review to ensure your Vagrant local development env is properly set up for use with Drupal
+A. config.json
+
+VAgrant is just like Aque, to allow the configure the drupal in their env.
+# if you want to up your site the in command prompt type
+  $ vagrant up
