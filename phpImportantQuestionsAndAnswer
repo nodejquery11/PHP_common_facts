@@ -1,4 +1,6 @@
 IMP Url: http://php.net/manual/en/function.get-loaded-extensions.php
+   https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html [Understand the REST api]
+   REST Api with PHP & MySQL [https://www.youtube.com/watch?v=DHUxnUX7Y2Y]
 
 How to handle an error in PHP
 1. debug_backtrace()
