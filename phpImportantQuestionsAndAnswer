@@ -1,0 +1,115 @@
+IMP Url: http://php.net/manual/en/function.get-loaded-extensions.php
+
+How to handle an error in PHP
+1. debug_backtrace()
+   2 parameters, option & limit
+    a. define any function
+    b. call `debug_backtrace() function and assing to variable
+2. If you set it in run time then follow to steps
+    a. ini_set('display_error', 'on' | 1);
+    b. error_reporting('E_ALL | E_STATIC'); [E_ALL: will display all error but E_STATIC report the notice which usually happen bez of not to follow the standerd]
+    E_ALL : will display Syntax error
+    E_NOTICE : to report the notice error
+
+2. include the apd library or extension
+    step 1:
+    zend_extension = /absolute/path/to/apd.so
+    apd.dumpdir = /absolute/path/to/trace/directory
+    apd.statement_tracing = 0
+    
+    step 2: It is very imp function or method in apd extension. You put this to top of your page so it will start tracing your entire page other wise it will effect the performance bottelnack
+    <?php apd_set_pprof_trace(); ?>
+    
+    step 3: there are multiple functio to perfomr many operations like `stop interprettor and wait for CR from the socket: apd_breakpoint`
+    http://php.net/manual/en/ref.apd.php
+3. include the phpdbg library or extension [this extension available in 5.6.3 and above]
+    step 1: phpdbg can control over the enviornment without impacting the functionality or performance of your code. phpdbg aims to be a lightweight, powerful, easy to use debugging platform for PHP
+    step 2: there are two major configuration
+        a. phpdbg.eol [default: 2]
+        b. phpdbg.path [default: Null/ if u want to set, you can]
+
+
+
+How can you see the list of extension in PHP (display)
+3 syntax: get_loaded_extension()
+
+How to load the extension in run-time
+# syntax: dl()
+if (!extension_loaded('sqlite')) {
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+        dl('php_sqlite.dll');
+    } else {
+        dl('sqlite.so');
+    }
+}
+
+To check, weather your extention has loaded or not
+# synatx: extension_loaded('name_of_ext');
+
+How to find the configuration of PHP
+# syntax: <?php phpinfo() ?>
+
+How to set the value of any variable or ini file value in run time
+# syntax: ini_set('variable', 'new_value');
+# syntax: ini_get_all('name_ext'); [to diaply all value of related extension]
+# syntax: ini_get('variable_name'); [it will display the value of related variable name]
+
+How to ignore the sleep method
+if u use the `set_time_limit()` method then system ignore the sleep() method while executing the program.
+set_time_limit(20);
+
+while($i <= 10) {
+    echo $i;
+    sleep(100); //it is ignore by system
+   $i++;
+}
+if set_time_limit(0) then script will run forever.
+
+Execution operator
+shell_exec() [execute the shell script or commands]
+exec($cmd) [run external command/program]
+system($cmd, $return_val) [to execute the external program and print output]
+proc_open($cmd, array $discriptorspace, array &$pipe, $cwd, $env);
+`{$val}`
+
+Type operator
+instenceof [it will check that object belong to the same class instance or not and return the boolean value true/false]
+
+Difference b/w require and include
+require : return the fatal error and stop execution 
+include: return the warning and execute the rest page
+
+Difference b/w for & foreach
+foreach: work on key & value pair like array or object. And it must have the specific itteration or end of the array
+for: it works on count of array or object. And you can increse the itteration as per your requirement.
+
+How to handle the exception
+try{
+  .... statement
+} catch(Exception $e) {
+    .... statement
+}
+set_exception_handler('custome_exception_fun');
+
+User-define function
+1. conditional function: you can call your function inside of condition 
+    if(true) foo();
+2. function within function : you can't call fooTwo() before fooOne(). Because PHP doesn't support the function overloading
+    function fooOne() {
+        function fooTwo() {
+            ... statement
+        }
+    }
+3. recursive function: break can't be call if loop is not there.
+  function recu($a) {
+     if($a < 20 ) {
+      echo "value =  $a \n";
+        recu($a + 1);
+    }
+  }
+Function argument: 
+1. call by refernece
+2. default parameter of function
+3. type declaration with argument
+4. ... operator to access the list of argument
+    
