@@ -1,6 +1,10 @@
-IMP Url: http://php.net/manual/en/function.get-loaded-extensions.php
+IMP Url: 
+   http://php.net/manual/en/function.get-loaded-extensions.php
    https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html [Understand the REST api]
    REST Api with PHP & MySQL [https://www.youtube.com/watch?v=DHUxnUX7Y2Y]
+   http://php.net/manual/en/indexes.functions.php
+   https://www.sitepoint.com/mysql-mistakes-php-developers/
+   https://www.keycdn.com/blog/php-performance/
 
 How to handle an error in PHP
 1. debug_backtrace()
@@ -114,4 +118,39 @@ Function argument:
 2. default parameter of function
 3. type declaration with argument
 4. ... operator to access the list of argument
+
+------------------------- 10/jul/2018 
+
+How to imporve the performance in PHP
+   1. Take advantage of native PHP functions (instead of writing your own function use native functions)
+   2. Use JSON instead of XML
+   3. Caching technique (Memcache | APC {Alternative PHP Cache} | OPcache)
+   4. Unnecessory calculation & classes
+   5. Use isset() method to check the count, existing etc
+   6. Turn off debugging notification
+   7. close db connection
+   8. Limit the db hits 
+   9. Use strongest string function like str_replace instead of preg_replace
+   10.stick with single quotes
+   11.Try to use "===" sign 
+   
+Which core part effect the PHP applications
+   1. Network
+   2. CPU
+   3. shared memory 
+   4. File system
+   5. Process menagment
+   6. Other server  
+
+MySQL mistake by PHP developers
+  1. MySQL has two engines MyISAM & InnoDB
+     MyISAM: do not have forign key concept which is basically use for data integrity. Whole table is locked, whenever the data insert or update, this effect the performance as well.
+  2. Use PHP MySQ function if MySQL version is 4.1.3 or later then recommanded to use MySQli
+  3. Do not trust the user inputs (PDO libary)
+  4. Favoring PHP over SQL [use as much as you can use SQl]
+  5. Not optimize the SQL query
+  6. Using wrong data type ex; once you store the date then use date or datetime, not integer or string
+  7. Using * sign in select query [instead of using * sign, use column name then it will improve sql query perfromance]
+  8. Indexing
+   
     
